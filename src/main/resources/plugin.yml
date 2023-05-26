@@ -1,0 +1,10 @@
+name: JavaExecutor
+version: '${project.version}'
+main: de.tamion.JavaExecutor
+api-version: 1.19
+authors: [Tamion]
+description: Execute your own Java code while ingame
+
+commands:
+  execute:
+  executefile:
