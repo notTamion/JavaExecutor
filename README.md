@@ -6,3 +6,5 @@ Execute your own Java code while ingame
 ## Permissions
 - JavaExecutor.executecode: /executecode
 - JavaExecutor.executefile: /executefile
+
+For questions, please contact me on Discord: Tamion#7835
