@@ -10,6 +10,8 @@ public final class JavaExecutor extends JavaPlugin {
     public void onEnable() {
         getCommand("executecode").setExecutor(new ExecuteCode());
         getCommand("executefile").setExecutor(new ExecuteFile());
+
+        Metrics metrics = new Metrics(this, 19007);
     }
 
     @Override
