@@ -23,10 +23,11 @@ public class Execute implements CommandExecutor {
         try {
             inter.eval(String.join(" ", args));
             sender.sendMessage("Executed Code");
+            return true;
         } catch (EvalError e) {
             sender.sendMessage("Something went wrong");
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
-        return true;
+        return false;
     }
 }

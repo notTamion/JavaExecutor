@@ -1,12 +1,13 @@
 package de.tamion.commands;
 
+import bsh.EvalError;
 import bsh.Interpreter;
-import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.jetbrains.annotations.NotNull;
 
+import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
@@ -25,11 +26,13 @@ public class ExecuteFile implements CommandExecutor {
         try {
             inter.eval(new String(Files.readAllBytes(Paths.get(args[0]))));
             sender.sendMessage("Executed Code");
-            Bukkit.getLogger().info("test");
-        } catch (Exception e) {
+            return true;
+        } catch (EvalError e) {
             sender.sendMessage("Something went wrong");
-            throw new RuntimeException(e);
+            e.printStackTrace();
+        } catch (IOException e) {
+            sender.sendMessage("File doesn't exist");
         }
-        return true;
+        return false;
     }
 }
