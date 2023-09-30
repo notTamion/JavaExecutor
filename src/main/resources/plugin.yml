@@ -6,5 +6,5 @@ authors: [Tamion]
 description: Execute your own Java code while ingame
 
 commands:
-  execute:
+  executecode:
   executefile:
