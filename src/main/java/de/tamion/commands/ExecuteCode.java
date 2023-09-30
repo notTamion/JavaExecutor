@@ -11,7 +11,7 @@ public class ExecuteCode implements CommandExecutor {
 
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command cmd, @NotNull String label, @NotNull String[] args) {
-        if(!sender.hasPermission("JavaExecutor.execute")) {
+        if(!sender.hasPermission("JavaExecutor.executecode")) {
             sender.sendMessage("You aren't allowed to execute this Command");
             return false;
         }
